@@ -6,7 +6,7 @@ int main (int argc, char **argv) {
 	ResultStruct result;
 
 	if(argc == 2 && (!strcmp(argv[1], "-h") || !strcmp(argv[1], "--help"))) {
-		printf("Usage : hashcode [input filename] [output filename]\n");
+		printf("Usage : ./hashcode.out [input filename] [output filename]\n");
 		return -1;
 	}
 	

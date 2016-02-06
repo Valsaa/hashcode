@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS=-W -Wall -std=c99 -pedantic
 LDFLAGS=-lm
-EXEC=hashcode
+EXEC=hashcode.out
 SRC=$(wildcard *.c)
 OBJ=$(SRC:.c=.o)
 
@@ -9,7 +9,7 @@ all: $(EXEC)
 
 $(EXEC): $(OBJ)
 	@echo "Generate \"$(EXEC)\" launcher"
-	@echo "Usage : ./hashcode [input filename] [output filename]"
+	@echo "Usage : ./hashcode.out [input filename] [output filename]"
 	@$(CC) -o $@ $^ $(LDFLAGS)	
 
 %.o: %.c
