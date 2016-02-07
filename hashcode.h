@@ -7,18 +7,9 @@
 #include <string.h>
 #include <math.h>
 
-typedef struct _datastruct {
-	// Déclarer les variables de données ici
-	void *pointer;
-} DataStruct;
+#include "dataobject.h"
+#include "resultobject.h"
 
-typedef struct _resultstruct {
-	// Déclarer les variables résultats ici
-	void *pointer;
-} ResultStruct;
-
-int readInputFile(const char *filename, DataStruct *data);
-int process(const DataStruct *data, ResultStruct *result);
-int writeResultFile(const char *filename, const ResultStruct *result);
+int process(const DataObject *data, ResultObject *result);
 
 #endif // HASHCODE_H

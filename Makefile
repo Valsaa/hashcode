@@ -1,9 +1,9 @@
-CC=gcc
-CFLAGS=-W -Wall -std=c99 -pedantic
+CC=g++
+CPPFLAGS=-W -Wall -pedantic
 LDFLAGS=-lm
 EXEC=hashcode.out
-SRC=$(wildcard *.c)
-OBJ=$(SRC:.c=.o)
+SRC=$(wildcard *.cpp)
+OBJ=$(SRC:.cpp=.o)
 
 all: $(EXEC)
 
@@ -12,7 +12,7 @@ $(EXEC): $(OBJ)
 	@echo "Usage : ./hashcode.out [input filename] [output filename]"
 	@$(CC) -o $@ $^ $(LDFLAGS)	
 
-%.o: %.c
+%.o: %.cpp
 	@echo "Compile \"$<\""
 	@$(CC) -o $@ -c $< $(CFLAGS)
 
