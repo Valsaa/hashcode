@@ -12,6 +12,8 @@ int writeResultFile(const char *filename, const ResultStruct *result) {
 		return -1;
 	}
 
+
+
 	fclose(output);
 	return 0;
 }
