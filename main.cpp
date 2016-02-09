@@ -8,7 +8,7 @@ int main (int argc, char **argv) {
 	}
 	
 	DataObject *data = new DataObject();
-	int status = data->readData(argc == 2 ? argv[1] : "input.txt");
+	int status = data->readData(argc == 2 ? argv[1] : "dc.in");
 	if(status < 0) {
 		fprintf(stderr, "readInputFile return %d... expected 0 !\n", status);
 		return -2;
