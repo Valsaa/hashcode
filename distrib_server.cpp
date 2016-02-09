@@ -8,6 +8,7 @@ Slot maxSlot(DataObject *data);
 void distrib_serveur(DataObject *data, vector<Server> *serv) {
 	for(int i = 0 ; i < serv->size() ; i++) {
 		Slot max_available = maxSlot(data);
+		cout << max_available._r << " " << max_available._s << " " << max_available._size << endl;
 		if(max_available._size >= serv->at(i)._size) {
 			serv->at(i)._r = max_available._r; 
 			serv->at(i)._s = max_available._s; 
@@ -25,6 +26,7 @@ Slot maxSlot(DataObject *data) {
 	
 	for(int i = 0 ; i < R ; i++) {	
 		next._r = i;
+		next._size = 0;
 		for(int j = 0 ; j < S ; j++) {
 			next._s = j;
 			switch(data->list_slot[i][j]._dispo) {
