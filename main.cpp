@@ -29,6 +29,24 @@ int main (int argc, char **argv) {
 
 	delete data;
 	delete result;
+	
+	
+	vector<Server> *serv;
+	    serv->push_back( Server(10, 1, 0) );
+	    serv->push_back( Server(10, 2, 1) );
+	    serv->push_back( Server(10, 2, 1) );
+	    serv->push_back( Server(10, 3, 0) );
+	    serv->push_back( Server(8, 1, 0) );
+	    serv->push_back( Server(6, 2, 0) );
+	    serv->push_back( Server(6, 3, 0) );
+	    serv->push_back( Server(2, 4, 0) );
+	
+	    cout << "trie: ";
+	    for (vector<Server>::iterator it = serv->begin(); it != serv->end(); ++it)
+	    {
+	        cout << '=> ' <<  << ' - ' << ;
+	    }
+	
 
 	return 0;
 }
