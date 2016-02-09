@@ -21,6 +21,7 @@ int main (int argc, char **argv) {
 	ResultObject *result = new ResultObject();
 	triServer(data->list_server);
 	distrib_serveur(data, data->list_server);
+	data->afficher_list_server();
 	distrib_pool(data, data->list_server);
 	result->writeResult(data, data->list_server, argc == 3 ? argv[2] : "output.txt");
 	if(status < 0) {
