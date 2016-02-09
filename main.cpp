@@ -1,5 +1,9 @@
 #include "hashcode.h"
 
+void triServer(vector<Server> *serv);
+void distrib_serveur(DataObject *data, vector<Server> *serv);
+void distrib_pool(DataObject *data, vector<Server> *serv);
+
 int main (int argc, char **argv) {
 
 	if(argc == 2 && (!strcmp(argv[1], "-h") || !strcmp(argv[1], "--help"))) {
@@ -15,14 +19,10 @@ int main (int argc, char **argv) {
 	}	
 
 	ResultObject *result = new ResultObject();
-	process(data, result);
-	if(status < 0) {
-		fprintf(stderr, "process return %d... expected 0 !\n", status);
-		return -3;
-	}	
-
-	vector<Server> serv;
-	result->writeResult(data, &serv, argc == 3 ? argv[2] : "output.txt");
+	triServer(data->list_server);
+	distrib_serveur(data, data->list_server);
+	distrib_pool(data, data->list_server);
+	result->writeResult(data, data->list_server, argc == 3 ? argv[2] : "output.txt");
 	if(status < 0) {
 		fprintf(stderr, "writeResultFile return %d... expected 0 !\n", status);
 		return -4;
@@ -35,19 +35,19 @@ int main (int argc, char **argv) {
 }
 
 
-void triServer(vector<Server> &serv)
+void triServer(vector<Server> *serv)
 {
     // Trie la capacité
     bool tab_en_ordre = false;
-    long taille = serv.size()-1;
+    long taille = serv->size()-1;
     while(!tab_en_ordre)
     {
         tab_en_ordre = true;
         for(long i=0 ; i<taille; ++i)
         {
-            if(serv.at(i)._capacite < serv.at(i+1)._capacite)
+            if(serv->at(i)._capacite < serv->at(i+1)._capacite)
             {
-                swap(serv.at(i),serv.at(i+1));
+                swap(serv->at(i),serv->at(i+1));
                 tab_en_ordre = false;
             }
         }
@@ -56,15 +56,15 @@ void triServer(vector<Server> &serv)
 
     // Trie la taille
     tab_en_ordre = false;
-    taille = serv.size()-1;
+    taille = serv->size()-1;
     while(!tab_en_ordre)
     {
         tab_en_ordre = true;
         for(long i=0 ; i<taille; ++i)
         {
-            if(serv.at(i)._capacite == serv.at(i+1)._capacite && serv.at(i)._size > serv.at(i+1)._size)
+            if(serv->at(i)._capacite == serv->at(i+1)._capacite && serv->at(i)._size > serv->at(i+1)._size)
             {
-                swap(serv.at(i),serv.at(i+1));
+                swap(serv->at(i),serv->at(i+1));
                 tab_en_ordre = false;
             }
         }

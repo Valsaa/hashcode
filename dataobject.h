@@ -20,7 +20,7 @@ class DataObject {
 
 	public :
 	
-		Server list_server[NB_SERVERS];
+		vector<Server> *list_server;
 		Slot list_slot[R][S];
 		
 		DataObject(void);
