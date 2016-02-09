@@ -82,7 +82,15 @@ float DataObject::Calcul_CP(void) {
 	}
 	return CP_total / R;
 }
+
 	
-	
-	
+vector<Server> DataObject::getServerAtRow(int id_row)
+{
+    vector<Server> serv;
+    for(int i=0 ; i<=NB_SERVERS-1 ; i++)
+    {
+		if(list_server[i]._r == id_row) serv.push_back(list_server[i]);
+	}
+	return serv;
+}	
 		
