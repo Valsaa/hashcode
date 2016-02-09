@@ -42,8 +42,8 @@ class DataObject {
 
 	public :
 	
-		Slot *list_slot;
-		Server *list_server;
+		Server list_server[NB_SERVERS];
+		Slot list_slots[R][S]
 		
 		DataObject(void);
 		int readData(const char *filename);

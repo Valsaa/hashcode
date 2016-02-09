@@ -25,7 +25,15 @@ int DataObject::readData(const char *filename) {
 		printf("%s\n", tabChar);
 	}*/
 	
+	//list_slot = NULL;
 	
+	/*for(int i=0 ; i<= 15 ; i++)
+	{
+		for(int j=0 ; j<=99 ; j++) {
+			list_slot[i] = new Slot(i,j,FREE);
+		}
+	}
+	}*/
 	
 	
 	
@@ -43,15 +51,23 @@ DataObject::~DataObject() {
 }
 
 Slot::Slot(int row, int slot, etat_slot state) {
-	r = row;
-	s = slot;
-	dispo = state;
+	_size = 0;
+	_r = row;
+	_s = slot;
+	_dispo = state;
 }
 
-Server::Server(int ca, int si, int po, int sl) {
-	capacite = ca;
-	size = si;
-	pool = po;
-	slot = sl;
+Slot::Slot(int row, int slot, int size) {
+	_size = size;
+	_r = row;
+	_s = slot;
+}
+
+Server::Server(int ca, int si, int po) {
+	_capacite = ca;
+	_size = si;
+	_pool = po;
+	_r = 0;
+	_s = 0;
 }
 
