@@ -34,3 +34,41 @@ int main (int argc, char **argv) {
 	return 0;
 }
 
+
+void triServer(vector<Server> &serv)
+{
+    // Trie la capacité
+    bool tab_en_ordre = false;
+    long taille = serv.size()-1;
+    while(!tab_en_ordre)
+    {
+        tab_en_ordre = true;
+        for(long i=0 ; i<taille; ++i)
+        {
+            if(serv.at(i)._capacite < serv.at(i+1)._capacite)
+            {
+                swap(serv.at(i),serv.at(i+1));
+                tab_en_ordre = false;
+            }
+        }
+        taille--;
+    }
+
+    // Trie la taille
+    tab_en_ordre = false;
+    taille = serv.size()-1;
+    while(!tab_en_ordre)
+    {
+        tab_en_ordre = true;
+        for(long i=0 ; i<taille; ++i)
+        {
+            if(serv.at(i)._capacite == serv.at(i+1)._capacite && serv.at(i)._size > serv.at(i+1)._size)
+            {
+                swap(serv.at(i),serv.at(i+1));
+                tab_en_ordre = false;
+            }
+        }
+        taille--;
+    }
+}
+
