@@ -16,6 +16,7 @@ class Slot {
 		
 		Slot(int row, int slot, etat_slot state);
 		Slot(int row, int slot, int size);
+		Slot();
 };
 
 #endif // SLOT_H

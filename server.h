@@ -14,6 +14,7 @@ class Server {
 		int _s;
 		
 		Server(int ca, int si, int po);
+		Server();
 		
 };
 

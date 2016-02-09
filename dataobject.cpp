@@ -1,7 +1,8 @@
 #include "dataobject.h"
 
-DataObject::DataObject() {
+using namespace std;
 
+DataObject::DataObject() {
 
 }
 

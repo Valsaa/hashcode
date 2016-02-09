@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <cstdio>
+#include <vector>
 #include "server.h"
 #include "slot.h"
 

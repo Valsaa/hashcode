@@ -1,5 +1,9 @@
 #include "server.h" 
 
+Server::Server() {
+
+}
+
 Server::Server(int ca, int si, int po) {
 	_capacite = ca;
 	_size = si;
