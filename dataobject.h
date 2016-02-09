@@ -14,6 +14,8 @@
 #define S				100
 #define NB_SLOT_UNAV	80
 
+using namespace std;
+
 class DataObject {
 
 	public :
@@ -25,6 +27,7 @@ class DataObject {
 		int readData(const char *filename);
 		~DataObject(void);
 		vector<Server> getServerAtRow(int id_row);
+		void afficher_list_server(void);
 		Server findServer(int id);
 		float Calcul_CP(void);
 };
