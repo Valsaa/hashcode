@@ -4,7 +4,8 @@ ResultObject::ResultObject() {
 
 }
 
-int ResultObject::writeResult(const char *filename) {
+int ResultObject::writeResult(const char *filename)
+{
 	FILE *output = fopen(filename, "w");
 	if(output == NULL) {
 		fprintf(stderr, "Cannot open file %s in %s:%d.\n", filename, __FILE__, __LINE__);
