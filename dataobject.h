@@ -12,4 +12,22 @@ class DataObject {
 		~DataObject(void);
 };
 
+class Slot {
+
+	public :
+		int r;
+		int s;
+		enum {free, used, unav} dispo;
+		
+};
+
+class Server {
+
+	public :
+		int capacite;
+		int size;
+		int pool;
+		
+}
+
 #endif // DATAOBJECT_H

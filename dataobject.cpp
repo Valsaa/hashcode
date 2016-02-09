@@ -24,6 +24,15 @@ int DataObject::readData(const char *filename) {
 		fscanf(input, "%s\n", tabChar);
 		printf("%s\n", tabChar);
 	}*/
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	fclose(input);
 	return 0;
