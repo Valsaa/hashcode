@@ -3,7 +3,7 @@
 using namespace std;
 
 DataObject::DataObject() {
-
+	this->list_server = new vector<Server>(NB_SERVERS);
 }
 
 int DataObject::readData(const char *filename) {
