@@ -45,7 +45,7 @@ int DataObject::readData(const char *filename) {
 		list_server->at(i-81)._id = i-81;
 		list_server->at(i-81)._capacite = capa;
 		list_server->at(i-81)._size = taille;
-		list_server->at(i-81)._pool = 0;
+		list_server->at(i-81)._pool = -1;
 		list_server->at(i-81)._r = -1;
 		list_server->at(i-81)._s = -1;
 	}
@@ -78,18 +78,20 @@ float DataObject::Calcul_CP(void) {
 
 	int CP_total = 0;
 	for(int a=0 ; a<=NB_SERVERS-1 ; a++) {
-		CP_total += list_server->at(a)._capacite;
+		if(list_server->at(a)._r != -1) {
+			CP_total += list_server->at(a)._capacite;
+		}
 	}
-	return CP_total / R;
+	return CP_total / NB_POOL;
 }
 
 
-vector<Server> DataObject::getServerAtRow(int id_row)
+vector<Server*> DataObject::getServerAtRow(int id_row)
 {
-    vector<Server> serv;
+    vector<Server*> serv;
     for(int i=0 ; i<=NB_SERVERS-1 ; i++)
     {
-		if(list_server->at(i)._r == id_row) serv.push_back(list_server->at(i));
+		if(list_server->at(i)._r == id_row) serv.push_back(&(list_server->at(i)));
 	}
 	return serv;
 }

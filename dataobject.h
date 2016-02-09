@@ -26,7 +26,7 @@ class DataObject {
 		DataObject(void);
 		int readData(const char *filename);
 		~DataObject(void);
-		vector<Server> getServerAtRow(int id_row);
+		vector<Server*> getServerAtRow(int id_row);
 		void afficher_list_server(void);
 		Server findServer(int id);
 		float Calcul_CP(void);
