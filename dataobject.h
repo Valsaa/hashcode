@@ -24,8 +24,9 @@ class DataObject {
 		DataObject(void);
 		int readData(const char *filename);
 		~DataObject(void);
-		void afficher_list_server(void);
+		vector<Server> getServerAtRow(int id_row);
 		Server findServer(int id);
+		float Calcul_CP(void);
 };
 
 

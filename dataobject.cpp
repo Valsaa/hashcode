@@ -51,7 +51,7 @@ int DataObject::readData(const char *filename) {
 	}
 	
 	
-	
+	//printf("-- %f --\n", Calcul_CP() );
 	
 	
 
@@ -73,3 +73,16 @@ void DataObject::afficher_list_server(void) {
 Server DataObject::findServer(int id) {
 	return list_server[id];
 }
+
+float DataObject::Calcul_CP(void) {
+
+	int CP_total = 0;
+	for(int a=0 ; a<=NB_SERVERS-1 ; a++) {
+		CP_total += list_server[a]._capacite;
+	}
+	return CP_total / R;
+}
+	
+	
+	
+		
