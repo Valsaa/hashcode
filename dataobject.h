@@ -24,6 +24,8 @@ class DataObject {
 		DataObject(void);
 		int readData(const char *filename);
 		~DataObject(void);
+		void afficher_list_server(void);
+		Server findServer(int id);
 };
 
 

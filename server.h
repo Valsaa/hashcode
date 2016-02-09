@@ -7,6 +7,7 @@
 class Server {
 
 	public :
+		int _id;
 		int _capacite;
 		int _size;
 		int _pool;
@@ -15,6 +16,7 @@ class Server {
 		
 		Server(int ca, int si, int po);
 		Server();
+		void affiche(void);
 		
 };
 

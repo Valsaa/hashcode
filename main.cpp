@@ -21,7 +21,8 @@ int main (int argc, char **argv) {
 		return -3;
 	}	
 
-	result->writeResult(argc == 3 ? argv[2] : "output.txt");
+	vector<Server> serv;
+	result->writeResult(data, &serv, argc == 3 ? argv[2] : "output.txt");
 	if(status < 0) {
 		fprintf(stderr, "writeResultFile return %d... expected 0 !\n", status);
 		return -4;

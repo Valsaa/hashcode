@@ -3,12 +3,18 @@
 
 #include <iostream>
 #include <cstdio>
+#include <vector>
+#include "dataobject.h"
+
+using namespace std;
 
 class ResultObject {
 
 	public :
+		char _text[NB_SERVERS][100];
+
 		ResultObject(void);
-		int writeResult(const char *filename);
+		int writeResult(DataObject *, vector<Server> *, const char *);
 		~ResultObject(void);
 
 };

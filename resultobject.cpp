@@ -4,22 +4,23 @@ ResultObject::ResultObject() {
 
 }
 
-int ResultObject::writeResult(const char *filename)
+int ResultObject::writeResult(DataObject *data, vector<Server> *serv, const char *filename)
 {
 	FILE *output = fopen(filename, "w");
 	if(output == NULL) {
 		fprintf(stderr, "Cannot open file %s in %s:%d.\n", filename, __FILE__, __LINE__);
 		return -1;
 	}
-
-	//peut etre creer une fonction convertResult2String() (ou un toString() de ResultObject)
 	
-	// A REMPLACER
-	char text[] = "azertyuiop\n";
-	for(int i = 0 ; i < 10 ; i++) {
-		fputs(text, output);
+	for(int i = 0 ; i < NB_SERVERS ; i++) {
+		Server s = data->findServer(i);
+		if(s._r != -1 && s._s != -1) {
+			fprintf(output, "%d %d %d\n", s._r, s._s, s._pool);
+		}
+		else {
+			fprintf(output, "x\n");
+		}
 	}
-	// A REMPLACER
 
 	fclose(output);
 	return 0;

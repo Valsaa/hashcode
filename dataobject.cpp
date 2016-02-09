@@ -37,17 +37,17 @@ int DataObject::readData(const char *filename) {
 		list_slot[row][slo]._dispo = UNAV;
 	}
 	
-	
 	// on créer tt les serveurs
 	int taille = 0, capa = 0;
 	for(int i=81 ; i<=705 ; i++)
 	{
-		fscanf(input, "%d %d\n",&taille ,&capa); 
+		fscanf(input, "%d %d\n",&taille ,&capa);
+		list_server[i-81]._id = i-81;
 		list_server[i-81]._capacite = capa;
 		list_server[i-81]._size = taille;
 		list_server[i-81]._pool = 0;
-		list_server[i-81]._r = 0;
-		list_server[i-81]._s = 0;
+		list_server[i-81]._r = -1;
+		list_server[i-81]._s = -1;
 	}
 	
 	
@@ -63,4 +63,13 @@ DataObject::~DataObject() {
 
 }
 
+void DataObject::afficher_list_server(void) {
 
+	for(int a=0 ; a<= (NB_SERVERS-1) ; a++) {	
+		list_server[a].affiche();
+	}
+}
+
+Server DataObject::findServer(int id) {
+	return list_server[id];
+}
