@@ -9,8 +9,8 @@ DataObject::DataObject() {
 int DataObject::readData(const char *filename) {
 
 	FILE *input = fopen(filename, "r");
-	int r_unav[NB_SLOT_UNAV] = [];
-	int s_unav[NB_SLOT_UNAV] = [];
+	//int r_unav[NB_SLOT_UNAV] = [];
+	//int s_unav[NB_SLOT_UNAV] = [];
 	
 	if(input == NULL) {
 		fprintf(stderr, "Cannot open file \"%s\" in %s:%d.\n", filename, __FILE__, __LINE__);
@@ -31,10 +31,13 @@ int DataObject::readData(const char *filename) {
 	}*/
 	
 	// on créer tout les slots libre
-	/*for(int i=0 ; i<= 15 ; i++)
+	for(int i=0 ; i<= 15 ; i++)
 	{
 		for(int j=0 ; j<=99 ; j++) {
-			new Slot(i,j,FREE);
+			list_slot[i][j]._r = i;
+			list_slot[i][j]._r = j;
+			list_slot[i][j]._size = 1;
+			list_slot[i][j]._dispo = FREE;
 		}
 	}
 	
@@ -43,7 +46,7 @@ int DataObject::readData(const char *filename) {
 	for(int i=1 ; i<=80 ; i++)
 	{
 		fscanf(input, "%d %d\n",&row ,&slo); 
-		list_slot[row][slo]->_dispo = UNAV;
+		list_slot[row][slo]._dispo = UNAV;
 	}
 	
 	
@@ -52,9 +55,13 @@ int DataObject::readData(const char *filename) {
 	for(int i=81 ; i<=705 ; i++)
 	{
 		fscanf(input, "%d %d\n",&taille ,&capa); 
-		new Server(capa, taille, 0);
+		list_server[i-81]._capacite = capa;
+		list_server[i-81]._size = taille;
+		list_server[i-81]._pool = 0;
+		list_server[i-81]._r = 0;
+		list_server[i-81]._s = 0;
 	}
-	*/
+	
 	
 	
 	
