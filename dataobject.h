@@ -4,6 +4,8 @@
 #include <iostream>
 #include <cstdio>
 
+typedef enum {FREE, USED, UNAV} etat_slot;
+
 class DataObject {
 
 	public :
@@ -17,8 +19,9 @@ class Slot {
 	public :
 		int r;
 		int s;
-		enum {free, used, unav} dispo;
+		etat_slot dispo;
 		
+		Slot(int row, int slot, etat_slot state);
 };
 
 class Server {
@@ -27,7 +30,11 @@ class Server {
 		int capacite;
 		int size;
 		int pool;
+		int slot;
 		
-}
+		Server(int ca, int si, int po, int sl);
+		
+		
+};
 
 #endif // DATAOBJECT_H

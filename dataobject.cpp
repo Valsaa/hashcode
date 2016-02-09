@@ -41,3 +41,17 @@ int DataObject::readData(const char *filename) {
 DataObject::~DataObject() {
 
 }
+
+Slot::Slot(int row, int slot, etat_slot state) {
+	r = row;
+	s = slot;
+	dispo = state;
+}
+
+Server::Server(int ca, int si, int po, int sl) {
+	capacite = ca;
+	size = si;
+	pool = po;
+	slot = sl;
+}
+
