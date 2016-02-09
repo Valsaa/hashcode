@@ -9,27 +9,15 @@ DataObject::DataObject() {
 int DataObject::readData(const char *filename) {
 
 	FILE *input = fopen(filename, "r");
-	//int r_unav[NB_SLOT_UNAV] = [];
-	//int s_unav[NB_SLOT_UNAV] = [];
 	
 	if(input == NULL) {
 		fprintf(stderr, "Cannot open file \"%s\" in %s:%d.\n", filename, __FILE__, __LINE__);
 		return -1;
 	}
 
-	// Traitement du fichier pour récup les données ici
-	
-	/*Exemple avec la fonction scanf
-	int i = 0, row = 0, col = 0;
-	fscanf(input, "%d %d\n", &row, &col);
-	printf("%d %d\n", row, col);
+	int a, b, c, d, e;
+	fscanf(input, "%d %d %d %d %d\n", &a, &b, &c, &d, &e);
 
-	char tabChar[col];
-	for(i = 0 ; i < row ; i++) {
-		fscanf(input, "%s\n", tabChar);
-		printf("%s\n", tabChar);
-	}*/
-	
 	// on créer tout les slots libre
 	for(int i=0 ; i<= 15 ; i++)
 	{
