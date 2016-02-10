@@ -1,4 +1,4 @@
-Arthur :
+﻿Arthur le gros caca ! :
 	-> problèmes c++
 	-> toujours toujours des constructeurs vides en POO
 	-> exploiter les constantes préprocesseurs définie
