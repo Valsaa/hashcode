@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 Arthur :
 	-> problèmes c++ => réglé
-=======
-﻿Arthur le gros caca ! :
-	-> problèmes c++
->>>>>>> eddb059f3ac526f6f434877a8da2820ed55e8c73
 	-> toujours toujours des constructeurs vides en POO
 	-> exploiter les constantes préprocesseurs définie
 
