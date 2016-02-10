@@ -1,11 +1,13 @@
 Arthur :
-	-> problèmes c++
+	-> problèmes c++ => réglé
 	-> toujours toujours des constructeurs vides en POO
 	-> exploiter les constantes préprocesseurs définie
 
 Alex :
+	-> ponctualite
 	-> problèmes pointeurs
 	-> plus productif
+	-> cafe + pizza
 
 Moi :
 	-> mieux répartir les taches
@@ -13,6 +15,7 @@ Moi :
 	-> réfléchir un peu plus a l'algo et moins à l'implementation (evite le RAZ)
 
 Tous :
+	-> debug dans dataobject
 	-> plus de pointeur : moins de problème d'identité
 	-> using namespace std;
 	-> pointeurs pointeurs pointeurs !!!!!!!!!

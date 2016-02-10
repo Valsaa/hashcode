@@ -4,6 +4,7 @@
 #include <iostream>
 #include <cstdio>
 #include <vector>
+#include <list>
 
 using namespace std;
 

@@ -11,15 +11,6 @@ int ResultObject::writeResult(const char *filename) {
 		return -1;
 	}
 
-	//peut etre creer une fonction convertResult2String() (ou un toString() de ResultObject)
-	
-	// A REMPLACER
-	char text[] = "azertyuiop\n";
-	for(int i = 0 ; i < 10 ; i++) {
-		fputs(text, output);
-	}
-	// A REMPLACER
-
 	fclose(output);
 	return 0;
 }
