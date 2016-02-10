@@ -1,7 +1,6 @@
 #include "dataobject.h"
 
 DataObject::DataObject() {
-
 }
 
 int DataObject::readData(const char *filename) {

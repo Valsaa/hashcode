@@ -6,6 +6,11 @@
 #include <errno.h>
 #include <string.h>
 #include <math.h>
+#include <vector>
+#include <iostream>
+#include <list>
+
+using namespace std;
 
 #include "dataobject.h"
 #include "resultobject.h"

@@ -1,0 +1,19 @@
+Arthur :
+	-> problèmes c++
+	-> toujours toujours des constructeurs vides en POO
+	-> exploiter les constantes préprocesseurs définie
+
+Alex :
+	-> problèmes pointeurs
+	-> plus productif
+
+Moi :
+	-> mieux répartir les taches
+	-> tester les algos
+	-> réfléchir un peu plus a l'algo et moins à l'implementation (evite le RAZ)
+
+Tous :
+	-> plus de pointeur : moins de problème d'identité
+	-> using namespace std;
+	-> pointeurs pointeurs pointeurs !!!!!!!!!
+	-> git et linux (si utilisation windows s'assurer de la compat (par exp.... instable))

@@ -6,6 +6,8 @@
 #include <errno.h>
 #include <string.h>
 #include <math.h>
+#include <vector>
+#include <list>
 
 #include "dataobject.h"
 #include "resultobject.h"
