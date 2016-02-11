@@ -2,6 +2,7 @@
 #define DATAOBJECT_H
 
 #include <iostream>
+#include <fstream>
 #include <cstdio>
 #include <vector>
 #include <list>

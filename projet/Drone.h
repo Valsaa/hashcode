@@ -16,7 +16,10 @@ class Drone
         Drone();
         virtual ~Drone();
 
-    protected:
+        int _positionX;
+        int _positionY;
+        Grp *_grp;
+        bool dispo;
 
     private:
 };

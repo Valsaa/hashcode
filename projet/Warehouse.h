@@ -17,6 +17,7 @@ class Warehouse
 
         int _positionX;
         int _positionY;
+        vector<Drone*> *listDrone;
         vector<int*> *_nbProduct;
 
     private:

@@ -2,13 +2,23 @@
 #define COMMAND_H
 
 
+#include <iostream>
+#include <cstdio>
+#include <vector>
+#include <list>
+
+using namespace std;
+
+
 class Command
 {
     public:
         Command();
         virtual ~Command();
 
-    protected:
+        int _positionX;
+        int _positionY;
+        vector<int> listProduct;
 
     private:
 };
