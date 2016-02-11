@@ -13,7 +13,7 @@
 #define	DEADLINE	112993
 #define MAXLOAD		200
 #define NBPRODTYPE	400
-#define NBWAREHOUSE 10
+#define NBWAREHOUSE	10
 #define NBORDER		1250
 
 /* constantes M_o_a_W :
