@@ -8,6 +8,7 @@
 #include <list>
 #include "Drone.h"
 #include "Warehouse.h"
+#include "Grp.h"
 #include "Command.h"
 
 // constantes busy_day :
@@ -48,6 +49,7 @@ class DataObject {
 		vector<Warehouse*> *_warehouse;
 		vector<Drone*> *_drone;
 		vector<Command*> *_listCmd;
+		vector<Grp*> *_group;
 };
 
 #endif // DATAOBJECT_H

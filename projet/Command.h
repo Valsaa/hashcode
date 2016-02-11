@@ -19,6 +19,7 @@ class Command
         int _positionX;
         int _positionY;
         vector<int> listProduct;
+	int _groupid;
 
     private:
 };
