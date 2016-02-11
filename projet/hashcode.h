@@ -17,4 +17,6 @@ using namespace std;
 
 int process(const DataObject *data, ResultObject *result);
 
+void groupOrder(DataObject *data);
+
 #endif // HASHCODE_H
