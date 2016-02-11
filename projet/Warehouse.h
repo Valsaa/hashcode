@@ -12,14 +12,14 @@ using namespace std;
 class Warehouse
 {
     public:
-        Warehouse(int px, int py, vector<int*> *nbProduct);
+        Warehouse(int px, int py, vector<int> nbProduct);
         virtual ~Warehouse();
 
 
         int _positionX;
         int _positionY;
         vector<Drone*> *_listDrone;
-        vector<int*> *_nbProduct;
+        vector<int> _nbProduct;
 
     private:
 };

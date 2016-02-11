@@ -35,6 +35,33 @@ int DataObject::readData(const char *filename)
 	return 0;
 }
 
+void DataObject::Attrib_Grp_Wh(void) {
+
+	// for each grp
+	//for(int a=0 ; a <= 
+}
+
+bool DataObject::Check_Grp_Wh(Grp* groupe, Warehouse* WH) {
+	
+	int list[NBPRODTYPE];
+	bool check = 1;
+	
+	for(int i=0 ; i<= NBPRODTYPE ; i++)
+	{
+		for(int a=0 ; a<= groupe->_cmd->size() ; a++)
+		{
+			list[i] += groupe->_cmd->at(a)->listProduct.at(i);
+		}
+	}
+	
+	for(int i=0 ; i<= NBPRODTYPE ; i++)
+	{
+		if( !(WH->_nbProduct.at(i) >= list[i]) )
+			check = 0;
+	}
+	return check;	
+}
+
 void DataObject::debug(void) {
 
 }

@@ -9,6 +9,7 @@
 #include "Drone.h"
 #include "Warehouse.h"
 #include "Command.h"
+#include "Grp.h"
 
 // constantes busy_day :
 #define NBROW		400
@@ -44,6 +45,8 @@ class DataObject {
 		void debug(void);
 		int readData(const char *filename);
 		~DataObject(void);
+		void Attrib_Grp_Wh(void);
+		bool Check_Grp_Wh(Grp* groupe, Warehouse* WH);
 
 		vector<Warehouse*> *_warehouse;
 		vector<Drone*> *_drone;
