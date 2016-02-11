@@ -1,6 +1,14 @@
 #ifndef DRONE_H
 #define DRONE_H
 
+#include <iostream>
+#include <cstdio>
+#include <vector>
+#include <list>
+
+
+using namespace std;
+
 
 class Drone
 {
