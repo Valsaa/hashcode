@@ -5,6 +5,8 @@
 #include <cstdio>
 #include <vector>
 #include <list>
+#include "Warehouse.h"
+#include "Command.h"
 
 using namespace std;
 
@@ -16,7 +18,8 @@ class Grp
         int calcul_distance_W(Warehouse* WH);
 
         Warehouse *_wh;
-        vector<Command*> *cmd;
+        vector<Command*> *_cmd;
+        vector<Drone*> *_listDrone;
 
     private:
 };
