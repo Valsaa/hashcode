@@ -1,5 +1,8 @@
 #include "dataobject.h"
 
+#include <math.h>
+#include <cstdlib>
+
 DataObject::DataObject(void)
 {
     _warehouse = new vector<Warehouse*>(NBWAREHOUSE);
@@ -38,7 +41,30 @@ int DataObject::readData(const char *filename)
 void DataObject::Attrib_Grp_Wh(void) {
 
 	// for each grp
-	//for(int a=0 ; a <= 
+	int min_dist = ceil(sqrt(NBROW*NBROW + NBCOL*NBCOL));
+	Warehouse* WH = NULL;
+	for(int a=0 ; a <= _group->size() ; a++)
+	{
+		for(int w=0 ; w<= _warehouse->size() ; w++)
+		{
+			if( _group->at(a)->calcul_distance_W(_warehouse->at(w)) < min_dist && Check_Grp_Wh(_group->at(a),_warehouse->at(w)) )
+			{
+				min_dist = _group->at(a)->calcul_distance_W(_warehouse->at(w));
+				WH = _warehouse->at(w);
+			}
+		}
+		if(WH != NULL)
+		{
+			_group->at(a)->_wh = WH;
+			for(int t=0 ; t<= NBPRODTYPE ; t++)
+			{
+				for(int g=0 ; g<= _group->at(a)->_cmd->size() ; g++)
+				{
+					WH->_nbProduct.at(t) -= _group->at(a)->_cmd->at(g)->listProduct.at(t);
+				}
+			}
+		}
+	}
 }
 
 bool DataObject::Check_Grp_Wh(Grp* groupe, Warehouse* WH) {
