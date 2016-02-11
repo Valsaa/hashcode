@@ -2,9 +2,13 @@
 #define DATAOBJECT_H
 
 #include <iostream>
+#include <fstream>
 #include <cstdio>
 #include <vector>
 #include <list>
+#include "Drone.h"
+#include "Warehouse.h"
+#include "Product.h"
 
 // constantes busy_day :
 #define NBROW		400
@@ -40,6 +44,9 @@ class DataObject {
 		void debug(void);
 		int readData(const char *filename);
 		~DataObject(void);
+
+		vector<Warehouse*> *_warehouse;
+		vector<Drone*> *_drone;
 };
 
 #endif // DATAOBJECT_H

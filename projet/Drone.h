@@ -1,6 +1,14 @@
 #ifndef DRONE_H
 #define DRONE_H
 
+#include <iostream>
+#include <cstdio>
+#include <vector>
+#include <list>
+
+
+using namespace std;
+
 
 class Drone
 {
@@ -8,7 +16,10 @@ class Drone
         Drone();
         virtual ~Drone();
 
-    protected:
+        int _positionX;
+        int _positionY;
+        Grp *_grp;
+        bool dispo;
 
     private:
 };
