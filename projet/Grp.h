@@ -13,7 +13,7 @@ class Grp
     public:
         Grp();
         virtual ~Grp();
-        int calculB();
+        int calcul_distance_W(Warehouse* WH);
 
         Warehouse *_wh;
         vector<Command*> *cmd;
