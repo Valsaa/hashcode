@@ -12,7 +12,7 @@ using namespace std;
 class Warehouse
 {
     public:
-        Warehouse(int px, int py, vector<int> nbProduct);
+        Warehouse(int px, int py, vector<int*> *nbProduct);
         virtual ~Warehouse();
 
 
