@@ -18,5 +18,6 @@ using namespace std;
 int process(const DataObject *data, ResultObject *result);
 
 void groupOrder(DataObject *data);
+void trierGroupWare(DataObject *data);
 
 #endif // HASHCODE_H

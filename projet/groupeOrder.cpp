@@ -30,6 +30,7 @@ Command* getNextFreeOrder(vector<Command*> *_listCmd, int ind) {
 	for(int i = 0 ; i < _listCmd->size() ; i++) {
 		if(debut) {
 			dist_min = euclidien(_listCmd->at(ind));
+			debut = false;
 		}
 		if(euclidien(_listCmd->at(i)) < dist_min) {
 			next = _listCmd->at(i);

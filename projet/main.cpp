@@ -15,6 +15,9 @@ int main (int argc, char **argv) {
 		return -2;
 	}
 
+	groupOrder(data);
+	data->Attrib_Grp_Wh();
+	trierGroupWare(data);
 	ResultObject *result = new ResultObject();
 	process(data, result);
 	if(status < 0) {
