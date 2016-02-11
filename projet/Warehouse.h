@@ -5,6 +5,7 @@
 #include <cstdio>
 #include <vector>
 #include <list>
+#include "Drone.h"
 
 using namespace std;
 
@@ -17,7 +18,7 @@ class Warehouse
 
         int _positionX;
         int _positionY;
-        vector<Drone*> *listDrone;
+        vector<Drone*> *_listDrone;
         vector<int*> *_nbProduct;
 
     private:

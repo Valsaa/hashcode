@@ -18,7 +18,6 @@ class Drone
 
         int _positionX;
         int _positionY;
-        Grp *_grp;
         bool dispo;
 
     private:

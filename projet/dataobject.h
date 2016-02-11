@@ -8,7 +8,7 @@
 #include <list>
 #include "Drone.h"
 #include "Warehouse.h"
-#include "Product.h"
+#include "Command.h"
 
 // constantes busy_day :
 #define NBROW		400
@@ -47,6 +47,7 @@ class DataObject {
 
 		vector<Warehouse*> *_warehouse;
 		vector<Drone*> *_drone;
+		vector<Command*> *_listCmd;
 };
 
 #endif // DATAOBJECT_H
