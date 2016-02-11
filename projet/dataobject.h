@@ -6,6 +6,31 @@
 #include <vector>
 #include <list>
 
+// constantes busy_day :
+#define NBROW		400
+#define NBCOL		600
+#define NBDRONE		30
+#define	DEADLINE	112993
+#define MAXLOAD		200
+#define NBPRODTYPE	400
+#define NBWAREHOUSE 10
+#define NBORDER		1250
+
+/* constantes M_o_a_W :
+#define NBROW		400
+#define NBCOL		600
+#define NBDRONE		30
+#define	DEADLINE	112993
+#define MAXLOAD		200
+*/
+/* constantes Red :
+#define NBROW		400
+#define NBCOL		600
+#define NBDRONE		30
+#define	DEADLINE	112993
+#define MAXLOAD		200
+*/
+
 using namespace std;
 
 class DataObject {
