@@ -14,6 +14,7 @@ class DataObject {
 	public :
 		DataObject(void);
 		void debug(void);
+		bool allOrdersTaken(void);
 		int readData(const char *filename);
 		~DataObject(void);
 

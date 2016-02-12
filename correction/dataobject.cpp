@@ -1,7 +1,6 @@
 #include "dataobject.h"
 
-DataObject::DataObject(void) {
-}
+DataObject::DataObject(void) {}
 
 void DataObject::debug(void) {
 	cout << this->nb_rows << " " << this->nb_cols << " " << this->nb_drones << " " << this->nb_turns << " " << this->max_payload << endl;
@@ -24,6 +23,21 @@ void DataObject::debug(void) {
 	}
 }
 
-DataObject::~DataObject(void) {
+bool DataObject::allOrdersTaken(void) {
+	bool all_taken = true;
 
+	for(int i = 0 ; i < this->orders->size() ; i++) {
+		if(this->orders->at(i)->state == FREE) {
+			all_taken = false;
+		}
+	}
+
+	return all_taken;
+}
+
+DataObject::~DataObject(void) {
+	delete drones;
+	delete product_types;
+	delete warehouses;
+	delete orders;
 }

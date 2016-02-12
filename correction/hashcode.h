@@ -15,7 +15,7 @@ using namespace std;
 #include "dataobject.h"
 #include "resultobject.h"
 
-int process(const DataObject *data, ResultObject *result);
+int process(DataObject *data, ResultObject *result);
 
 void groupOrder(DataObject *data);
 void trierGroupWare(DataObject *data);

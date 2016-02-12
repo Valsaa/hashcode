@@ -6,17 +6,23 @@
 
 using namespace std;
 
+typedef enum {FREE, TAKEN} State;
+
 class Order {
 
 	public :
 		Order(void);
-		Order(int x, int y);
+		Order(int x, int y, int order_ID, int nb_warehouse);
+		bool isRejected(void);
 		void debug(void);
 		~Order(void);
 
 		int x;
 		int y;
+		int order_ID;
+		State state;
 		vector<int> *products;
+		vector<bool> *buffer;
 
 };
 

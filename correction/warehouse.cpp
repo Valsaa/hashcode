@@ -2,16 +2,18 @@
 
 Warehouse::Warehouse(void) {}
 
-Warehouse::Warehouse(int x, int y) {
+Warehouse::Warehouse(int x, int y, int warehouse_ID) {
 	this->x = x;
 	this->y = y;
+	this->warehouse_ID = warehouse_ID;
+	this->orders = new vector<Order*>();
 }
 
-Order* Warehouse::closestOrder(vector<Order*> *orders) {
-	Order *closest = orders->at(0);
-	int dist_min = this->distance(closest);
+Order* Warehouse::closestFreeOrder(vector<Order*> *orders) {
+	Order *closest = NULL; 
+	int dist_min = 65535; 
 	for(int i = 0 ; i < orders->size() ; i++) {
-		if(this->isClosest(orders->at(i), dist_min)) {
+		if(orders->at(i)->state == FREE && this->isClosest(orders->at(i), dist_min)) {
 			closest = orders->at(i);
 		}
 	}
@@ -29,15 +31,42 @@ bool Warehouse::isClosest(Order *order, int dist_min) {
 	return this->distance(order) < dist_min ? true : false;
 }
 
+bool Warehouse::canProvideOrder(Order *order) {
+	bool canProvide = true;
+	vector<int> products(*(this->products));
+	for(int i = 0 ; i < order->products->size() ; i++) {
+		products.at(order->products->at(i))--;
+		if(products.at(order->products->at(i)) < 0) {
+			canProvide = false;
+		}
+	}
+
+	order->buffer->at(this->warehouse_ID) = canProvide;
+	return canProvide;
+}
+
+void Warehouse::provideOrder(Order *order) {
+	for(int i = 0 ; i < order->products->size() ; i++) {
+		this->products->at(order->products->at(i))--;
+	}
+}
+
 void Warehouse::debug(void) {
-	cout << this->x << " " << this->y << endl;
-	cout << this->products->at(0);
+	cout << this->warehouse_ID << " " << this->x << " " << this->y << endl;
+/*	cout << this->products->at(0);
 	for(int i = 1 ; i < this->products->size() ; i++) {
 		cout << " " << this->products->at(i);
-	}	
+	}	*/
+
+	cout << this->orders->size() << endl;
+	for(int i = 0 ; i < this->orders->size() ; i++) {
+		this->orders->at(i)->debug();
+	}
+
 	cout << endl;
 }
 
 Warehouse::~Warehouse(void) {
 	delete this->products;
+	delete this->orders;
 }

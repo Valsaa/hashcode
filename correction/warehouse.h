@@ -12,16 +12,20 @@ class Warehouse {
 
 	public :
 		Warehouse(void);
-		Warehouse(int x, int y);
-		Order* closestOrder(vector<Order*> *orders);
+		Warehouse(int x, int y, int warehouse_ID);
+		Order* closestFreeOrder(vector<Order*> *orders);
 		int distance(Order *order);
 		bool isClosest(Order *order, int dist_min);
+		bool canProvideOrder(Order *order);
+		void provideOrder(Order *order);
 		void debug(void);
 		~Warehouse(void);
 
 		int x;
 		int y;
+		int warehouse_ID;
 		vector<int> *products;
+		vector<Order*> *orders;
 };
 
 #endif
