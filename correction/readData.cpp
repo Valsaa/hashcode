@@ -10,6 +10,9 @@ int DataObject::readData(const char *filename) {
 	// Informations générales
 	fscanf(input, "%d %d %d %d %d\n", &this->nb_rows, &this->nb_cols, &this->nb_drones, &this->nb_turns, &this->max_payload);
 	this->drones = new vector<Drone*>(this->nb_drones);
+	for(int i = 0 ; i < this->nb_drones ; i++) {
+		this->drones->at(i) = new Drone(i);
+	}
 
 	// Informations sur les produits
 	fscanf(input, "%d\n", &this->nb_product_types);
