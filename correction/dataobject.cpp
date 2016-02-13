@@ -23,6 +23,18 @@ void DataObject::debug(void) {
 	}
 }
 
+bool DataObject::allDronesHaveWarehouse(void) {
+	bool haveWarehouse = true;
+
+	for(int i = 0 ; i < this->nb_drones ; i++) {
+		if(this->drones->at(i)->warehouse == NULL) {
+			haveWarehouse = false;
+		}
+	}
+
+	return haveWarehouse;
+}
+
 bool DataObject::allOrdersTaken(void) {
 	bool all_taken = true;
 

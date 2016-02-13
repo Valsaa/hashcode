@@ -5,6 +5,7 @@ Warehouse::Warehouse(void) {}
 Warehouse::Warehouse(int x, int y, int warehouse_ID) {
 	this->x = x;
 	this->y = y;
+	this->min_drones = 0;
 	this->warehouse_ID = warehouse_ID;
 	this->orders = new vector<Order*>();
 }
@@ -64,6 +65,17 @@ void Warehouse::debug(void) {
 	}
 
 	cout << endl;
+}
+
+void Warehouse::computeMinDrones(int max_payload, vector<int> *weights) {
+	int cumulWeight = 0;
+	for(int i = 0 ; i < this->orders->size() ; i++) {
+		cumulWeight += this->orders->at(i)->getTotalWeight(weights);
+		if(cumulWeight > max_payload) {
+			cumulWeight -= max_payload;
+			this->min_drones++;
+		}
+	}
 }
 
 Warehouse::~Warehouse(void) {

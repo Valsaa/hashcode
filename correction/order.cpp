@@ -25,6 +25,14 @@ bool Order::isRejected(void) {
 	return rejected;
 }
 
+int Order::getTotalWeight(vector<int> *weights) {
+	int totalWeight = 0;
+	for(int i = 0 ; i < this->products->size() ; i++) {
+		totalWeight += weights->at(this->products->at(i));
+	}
+	return totalWeight;
+}
+
 void Order::debug(void) {
 	cout << this->x << " " << this->y << endl;
 	cout << this->products->size() << endl;

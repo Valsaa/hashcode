@@ -16,6 +16,7 @@ class DataObject {
 		void debug(void);
 		bool allOrdersTaken(void);
 		int readData(const char *filename);
+		bool allDronesHaveWarehouse(void);
 		~DataObject(void);
 
 		int nb_rows;

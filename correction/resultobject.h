@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <cstdio>
+#include <string>
 #include <vector>
 #include <list>
 
@@ -14,6 +15,8 @@ class ResultObject {
 		ResultObject(void);
 		int writeResult(const char *filename);
 		~ResultObject(void);
+
+		vector<string> *text;
 
 };
 

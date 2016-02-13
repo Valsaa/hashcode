@@ -6,6 +6,7 @@ Drone::Drone(int x, int y, int drone_ID) {
 	this->x = x;
 	this->y = y;
 	this->drone_ID = drone_ID;
+	this->warehouse = NULL;
 }
 
 void Drone::debug(void) {

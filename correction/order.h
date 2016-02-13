@@ -14,6 +14,7 @@ class Order {
 		Order(void);
 		Order(int x, int y, int order_ID, int nb_warehouse);
 		bool isRejected(void);
+		int getTotalWeight(vector<int> *weights);
 		void debug(void);
 		~Order(void);
 

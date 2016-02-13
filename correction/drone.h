@@ -5,6 +5,7 @@
 #include <vector>
 #include <cstdio>
 #include <cmath>
+#include "warehouse.h"
 
 using namespace std;
 
@@ -27,6 +28,7 @@ class Drone {
         ~Drone(void);
 
 	int drone_ID;
+	Warehouse *warehouse;
 	int x;
 	int y;
 
