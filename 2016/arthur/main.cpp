@@ -14,19 +14,21 @@ int main (int argc, char **argv) {
 		return -2;
 	}
 
-	data->process();
+	ResultObject *result = new ResultObject();
+	process(data, result);
 	if(status < 0) {
 		fprintf(stderr, "process return %d... expected 0 !\n", status);
 		return -3;
 	}
 
-	data->writeResult(argc == 3 ? argv[2] : "output.txt");
+	result->writeResult(argc == 3 ? argv[2] : "output.txt");
 	if(status < 0) {
 		fprintf(stderr, "writeResultFile return %d... expected 0 !\n", status);
 		return -4;
 	}
 
 	delete data;
+	delete result;
 
 	return 0;
 }

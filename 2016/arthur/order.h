@@ -3,22 +3,27 @@
 
 #include <iostream>
 #include <vector>
-#include "node.h"
 
 using namespace std;
 
-class Order : public Node {
+typedef enum {FREE, TAKEN} State;
+
+class Order {
 
 	public :
 		Order(void);
-		Order(Order *order);
 		Order(int x, int y, int order_ID, int nb_warehouse);
-		~Order(void);
-		
+		bool isRejected(void);
+		int getTotalWeight(vector<int> *weights);
 		void debug(void);
+		~Order(void);
 
+		int x;
+		int y;
 		int order_ID;
+		State state;
 		vector<int> *products;
+		vector<bool> *buffer;
 
 };
 

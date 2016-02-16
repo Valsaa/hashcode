@@ -13,7 +13,11 @@
 using namespace std;
 
 #include "dataobject.h"
+#include "resultobject.h"
 
-int process(DataObject *data);
+int process(DataObject *data, ResultObject *result);
+
+void groupOrder(DataObject *data);
+void trierGroupWare(DataObject *data);
 
 #endif // HASHCODE_H

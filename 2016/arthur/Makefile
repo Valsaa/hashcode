@@ -25,11 +25,3 @@ clean:
 mrproper: clean
 	@echo "Delete \"$(EXEC)\" launcher"
 	@rm -rf $(EXEC)
-
-run : $(EXEC)
-	@echo "Launch of $(EXEC)"
-	@./$(EXEC)
-
-valgrind: 
-	@echo "Memory check"
-	@valgrind --tool=memcheck ./$(EXEC)

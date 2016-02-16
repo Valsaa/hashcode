@@ -1,21 +1,12 @@
 #include "drone.h"
 
-Drone::Drone(void) {
-	this->x = 0;
-	this->y = 0;
-	this->drone_ID = 0;
-}
-
-Drone::Drone(Drone *drone) {
-	this->x = drone->x;
-	this->y = drone->y;
-	this->drone_ID = drone->drone_ID;
-}
+Drone::Drone(void) {}
 
 Drone::Drone(int x, int y, int drone_ID) {
 	this->x = x;
 	this->y = y;
 	this->drone_ID = drone_ID;
+	this->warehouse = NULL;
 }
 
 void Drone::debug(void) {
@@ -38,12 +29,26 @@ void Drone::wait(FILE *output, int nb_turns) {
 	fprintf(output, "%d W %d\n", this->drone_ID, nb_turns);
 }
 
-void Drone::writeResult(FILE *output) {
-	this->load(output, 0, 1, 2);
-	this->unload(output, 8, 541, 22);
-	this->unload(output, 2, 13, 94);
-	this->load(output, 7, 11, 25);
-	this->wait(output, 25);
+int Drone::computeTurnsRequired(int x, int y) {
+	return this->distance(x, y) + 1;
+}
+
+int Drone::computeTurnsRequired(int w) {
+	return w;
+}
+
+int Drone::distance(int x, int y) {
+	int diffX = this->x - x;
+	int diffY = this->y - y;
+	return ceil(sqrt(diffX * diffX + diffY * diffY));
+}
+
+void Drone::test(void) {
+	this->load(stdout, 0, 1, 2);
+	this->unload(stdout, 8, 541, 22);
+	this->unload(stdout, 2, 13, 94);
+	this->load(stdout, 7, 11, 25);
+	this->wait(stdout, 25);
 }
 
 Drone::~Drone(void) {}
