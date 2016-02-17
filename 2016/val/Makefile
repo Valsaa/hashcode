@@ -1,5 +1,5 @@
 CC=g++
-CPPFLAGS=-W -Wall -pedantic
+CPPFLAGS=-W -Wall -pedantic -std=c++11
 LDFLAGS=-lm
 EXEC=hashcode.out
 SRC=$(wildcard *.cpp)

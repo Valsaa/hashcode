@@ -2,10 +2,10 @@
 #define DRONE_H
 
 #include <iostream>
+#include <fstream>
+#include <sstream>
 #include <vector>
-#include <cstdio>
-#include <cmath>
-#include <cstdio>
+#include <string>
 #include "node.h"
 #include "warehouse.h"
 
@@ -22,15 +22,17 @@ class Drone {
         ~Drone(void);
 
 	void debug(void);
-	void writeResult(FILE *output);
-	void load(FILE *output, int warehouse_ID, int product_type_ID, int nb_items);
-	void unload(FILE *output, int order_ID, int product_type_ID, int nb_items);
-	void deliver(FILE *output, int order_ID, int product_type_ID, int nb_items);
-	void wait(FILE *output, int nb_turns);
+	void test(void);
+	void writeResult(ofstream *output);
+	void load(int warehouse_ID, int product_type_ID, int nb_items);
+	void unload(int order_ID, int product_type_ID, int nb_items);
+	void deliver(int order_ID, int product_type_ID, int nb_items);
+	void wait(int nb_turns);
 
 	int drone_ID;
 	int x;
 	int y;
+	vector<string> *commands;
 
 };
 
