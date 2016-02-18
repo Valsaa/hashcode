@@ -1,5 +1,5 @@
 CC=g++
-CPPFLAGS=-W -Wall -pedantic -std=c++11
+CPPFLAGS=-g -G -W -Wall -pedantic -std=c++11
 LDFLAGS=-lm
 EXEC=hashcode.out
 SRC=$(wildcard *.cpp)
@@ -33,3 +33,6 @@ run : $(EXEC)
 valgrind: 
 	@echo "Memory check"
 	@valgrind --tool=memcheck ./$(EXEC)
+
+zip :
+	@zip -r source_code.zip .

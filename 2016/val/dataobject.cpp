@@ -33,6 +33,7 @@ int DataObject::readData(const char *filename) {
 	first->warehouses = new vector<Warehouse*>(first->nb_warehouses);
 	for(int i = 0 ; i < first->nb_warehouses ; i++) {
 		input >> x >> y;	
+		//cout << x << " " << y << endl;
 		first->warehouses->at(i) = new Warehouse(x, y, i);
 
 		products = new vector<int>(first->nb_product_types);
@@ -41,6 +42,7 @@ int DataObject::readData(const char *filename) {
 			input >> products->at(j);
 		}
 		first->warehouses->at(i)->products = products;
+		first->nodes->push_back(first->warehouses->at(i)); 
 	}
 
 	// Informations sur les drônes
@@ -65,6 +67,7 @@ int DataObject::readData(const char *filename) {
 			input >> products->at(j);
 		}
 		first->orders->at(i)->products = products;
+		first->nodes->push_back(first->orders->at(i));
 	}
 
 	this->graphs->push_back(first);

@@ -1,6 +1,8 @@
 #ifndef NODE_H
 #define NODE_H
 
+typedef enum {WAREHOUSE, ORDER} Type;
+
 class Node {
 
 	public :
@@ -10,6 +12,7 @@ class Node {
 
 		int x;
 		int y;
+		Type type;
 };
 
 #endif // NODE_H

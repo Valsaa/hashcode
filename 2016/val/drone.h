@@ -6,12 +6,11 @@
 #include <sstream>
 #include <vector>
 #include <string>
+#include <cmath>
 #include "node.h"
 #include "warehouse.h"
 
 using namespace std;
-
-typedef enum {L, U, D, W} _Action;
 
 class Drone {
 
@@ -24,6 +23,8 @@ class Drone {
 	void debug(void);
 	void test(void);
 	void writeResult(ofstream *output);
+	int computeBestPath(vector<Node*> *nodes);
+	int distance(Node *node);
 	void load(int warehouse_ID, int product_type_ID, int nb_items);
 	void unload(int order_ID, int product_type_ID, int nb_items);
 	void deliver(int order_ID, int product_type_ID, int nb_items);
@@ -32,6 +33,7 @@ class Drone {
 	int drone_ID;
 	int x;
 	int y;
+	int nb_wait_turns;
 	vector<string> *commands;
 
 };

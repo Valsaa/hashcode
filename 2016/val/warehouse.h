@@ -14,6 +14,7 @@ class Warehouse : public Node {
 		Warehouse(void);
 		Warehouse(Warehouse *warehouse);
 		Warehouse(int x, int y, int warehouse_ID);
+		bool canProvide(const Order *order, int max_payload, const vector<int> *weights);
 		~Warehouse(void);
 
 		void debug(void);

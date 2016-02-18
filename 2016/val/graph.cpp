@@ -80,22 +80,26 @@ Graph::~Graph(void) {
 	delete this->product_weights;
 
 	for(int i = 0 ; i < this->nodes->size() ; i++) {
-		delete this->nodes->at(i);
+		if(this->nodes->at(i) != NULL) 
+			delete this->nodes->at(i);
 	}
 	delete this->nodes;
 
 	for(int i = 0 ; i < this->warehouses->size() ; i++) {
-		delete this->warehouses->at(i);
+		if(this->warehouses->at(i) != NULL)
+			delete this->warehouses->at(i);
 	}
 	delete this->warehouses;
 
 	for(int i = 0 ; i < this->orders->size() ; i++){
-		delete this->orders->at(i);
+		if(this->orders->at(i) != NULL)
+			delete this->orders->at(i);
 	}
 	delete this->orders;
 
 	for(int i = 0 ; i < this->drones->size() ; i++) {
-		delete this->drones->at(i);
+		if(this->drones->at(i) != NULL)
+			delete this->drones->at(i);
 	}
 	delete this->drones;
 }
